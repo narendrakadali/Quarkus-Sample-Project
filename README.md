@@ -1,4 +1,4 @@
-# NaIdentity IGA - Quarkus Reactive Microservice
+# Quarkus Reactive Microservice - Sample Project
 
 ## 📌 Project Overview
 This is a **Quarkus-based Identity Governance and Access Management (IGA) microservice** that:
