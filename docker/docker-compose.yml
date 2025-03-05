@@ -4,11 +4,14 @@ services:
   mysql:
     image: mysql:8
     container_name: mysql-db
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: naidentity
     ports:
       - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql  # ✅ Persist MySQL data
 
   zookeeper:
     image: wurstmeister/zookeeper
@@ -28,3 +31,5 @@ services:
       - "9092:9092"
     depends_on:
       - zookeeper
+volumes:
+  mysql_data:  # ✅ This defines a persistent volume for MySQL
